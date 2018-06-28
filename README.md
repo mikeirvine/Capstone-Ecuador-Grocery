@@ -6,7 +6,13 @@ July 29, 2018
 Galvanize Data Science Immersive - Denver
 
 ## Executive Summary
-### This is a test of a tagline
+- *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model
+- *Corporación Favorita* provided daily store level sales aggregated by product item number, along with supplemental datasets to enrich the transactional data.
+- Given the enormous dataset (125M+ daily unit sales records), I selected a single year and product family to build a sales forecasting model
+- 249 features were created after merging datasets to enrich the transaction data and creating dummy variables for all the categorical features
+- Different variations of linear regression with cross validation were used to try to find the best fit, including standard linear, lasso and ridge techniques
+- The standard linear regression model produced the best results on the test dataset, with an R-Squared of .54 and an average Root Mean Squared Error of 8.18. Improvements are needed to better predict sales, but the model is predictive and further refinements will yield better results
+- There is opportunity to improve the model on the MEATS item family and prior to applying the model to all item families and time periods
 
 ## Context & Key Question:
 ### *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model.
