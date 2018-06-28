@@ -168,10 +168,13 @@ According to my models, holidays, oil prices, and promotion status were relative
 
 The results indicate the a linear regression model to predict unit sales is feasible, and with further refinements to the model, accuracy of the model could be improved. The Root Mean Squared Error (RMSE) results for each model are below.
 
-Linear RMSE test results: 8.18198212230643
-Linear R squared results: 0.5354179008623021
-Lasso RMSE test results: 8.204718952899105 with alpha of 0.05
-Ridge RMSE test results: 8.179888268205561 with alpha of 0.1
+Linear RMSE test results: 8.19
+
+Linear R squared results: 0.54
+
+Lasso RMSE test results: 8.20 with alpha of 0.05
+
+Ridge RMSE test results: 8.20 with alpha of 0.1
 
 I used the regularization models, Lasso and Ridge, to attempt to reduce the magnitude of the coefficients in the case of overfitting. However, I found that the larger the alphas, the worse the scores for the models. This shows that the standard linear regression model is not overfitting.
 
