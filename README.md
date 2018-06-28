@@ -142,10 +142,25 @@ The final dataset for modeling had 249 features, mostly due to the dummies. For 
 
 From the 500K records, I took a random sample of 100K to run through each regression model. I setup a kfold cross validation with 5 folds, including a standardization of the feature matrix, to ensure an accurate reading of my error metric. For each regression modeling test, I calculated the Root Mean Squared Error. I modeled the data using standard Linear, Ridge and Lasso regression techniques.
 
+After running the results, I identifed the most important features using a recursive feature selection method in sklearn. The method ranks the features in terms of importance (based on the coefficients). It then attemptes to prune the number of features by focusing on the most importants. The most important features groups include:
+
+- Item Class
+- Item Number
+- Item Perishable
+- Month of Year
+- Store Cluster
+- Store Number
+- Store Type
+- Week of Year
+- Day of Week
+
+According to my models, holidays, oil prices, and promotion status were relatively unimportant compared to the features above.
+
+
 ## Results
 ### The standard linear regression model produced the best results on the test dataset, with an R-Squared of .54 and an average Root Mean Squared Error of 8.18. Improvements are needed to better predict sales, but the model is predictive and further refinements will yield better results.
 
-The results indicate the a linear regression model to predict unit sales is feasible, and with further refinements to the model, accuracy of the model could be improved. The Root Mean Squared Error results for each model are below.
+The results indicate the a linear regression model to predict unit sales is feasible, and with further refinements to the model, accuracy of the model could be improved. The Root Mean Squared Error (RMSE) results for each model are below.
 
 Linear RMSE test results: 8.18198212230643
 Linear R squared results: 0.5354179008623021
@@ -154,19 +169,28 @@ Ridge RMSE test results: 8.179888268205561 with alpha of 0.1
 
 I used the regularization models, Lasso and Ridge, to attempt to reduce the magnitude of the coefficients in the case of overfitting. However, I found that the larger the alphas, the worse the scores for the models. This shows that the standard linear regression model is not overfitting.
 
+One important note regarding the outliers. Without removing the outliers, the RMSE was 26+ and R Squared is only ~.25. This indicates that the outliers and leverage points had a major impact on the model's predictions and it was valid to remove them.
+
 Below is a plot of the residuals vs the predicted unit sales for each regression technique. There is an issue with the residuals given the diagonal line, which is likely caused by a set of zero values in the actuals where the model predicts an increasing larger value. More research is required to uncover the issue. Besides for the diagonal line, the residuals are fairly normally distributed, which is a good sign.
 
 ![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/residualvpredicted.png)
 
 The next plot shows the actual vs predicted values. This plot shows that there is predicted value in the model as the data points trend to the upper right.
 
-- Question trying to answer
-- Data source
-- EDA
-- Feature Engineering
-- Modeling
-- Results
-- Future work
-- References
+![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/predictedvactuals.png)
 
-NOTE: without removing outliers, rmse is 26+ and r squared is only ~.25
+
+## Future Work
+### There is opportunity to improve the model on the MEATS item family and prior to applying the model to all item families and time periods.
+Additional work is need on the model to yield better results. There are a few questions I would investigate first to improve the model, including:
+- What is the issue with the diagonal trend line in the residuals? Are there some zero values I need to adjust?
+- Are there any other outliers or leverage points impacting the effectiveness of the model?
+- What other features could be engineered to add to the model?
+- What other linear regression modeling techniques could be tested?
+- Are some features collinear and need to be removed?
+
+
+## References
+Below is a link to the Kaggle competition with the datasets.
+[Kaggle competition link](https://www.kaggle.com/c/favorita-grocery-sales-forecasting)
+
