@@ -30,7 +30,7 @@ My module 1 capstone project is to take part in this challenge by building a lin
 ## Exploratory Data Analysis
 ### Given the enormous dataset (125M+ daily unit sales records), I selected a single year and product family to build a sales forecasting model.
 An outline of each table is below. My general approach was to use the supplemental datasets (items, holidays, store, etc.) to enrich the transaction dataset, and then select a subset of the data for a particula year and item family to reduce the scope of the model. 
-##### Transaction Dataset: 
+#### Transaction Dataset: 
 - The main transaction dataset has 125M+ records spanning from Jan 1, 2013 to Aug 15, 2017
 - A record is defined as the unit sales volume (not price) for a particular item number by store by day.
 - Only includes 6 features: id, date, store_nbr, item_nbr, unit_sales, and onpromotion
@@ -104,7 +104,7 @@ Only selecting the 'MEATS' item family reduced the datasize to ~500k records. Ke
 |75%      |    11.61  |
 |max      |  5357.83  |
 
-Because of some extreme outliers (12 data points > 1000 unit_sales) that are several standard deviations away from the mean, I decided to remove them from the dataset. The table and histogram below shows details for the unit_sales for the MEATS item family after the outliers are removed. The mean is now 9.46 unit sales per day per store, a standard deviation of ~12, and a max value of 77.86.
+Because of some extreme outliers (12 data points > 1000 unit_sales) that are several standard deviations away from the mean, I decided to remove them from the dataset. Any data point +/- 2 standard deviations from the mean was removed. The table and histogram below shows details for the unit_sales for the MEATS item family after the outliers are removed. The mean is now 9.46 unit sales per day per store, a standard deviation of ~12, and a max value of 77.86.
 
 |Stat |    Value 
 |-------|----------------|
@@ -117,10 +117,30 @@ Because of some extreme outliers (12 data points > 1000 unit_sales) that are sev
 |75%    |     11.04 |
 |max    |      77.86 |
 
+![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/hist_unitsales.png)
 
 
 ## Feature Engineering
-### 249 features were created after merging datasets to enrich the transaction data, and creating dummy variables for all the categorical features.
+### 249 features were created after merging datasets to enrich the transaction data and creating dummy variables for all the categorical features.
+All of the supplemental datasets could be merged with the transaction dataset using date, item_nbr or store_nbr. This allowed me to enrich the transaction data set with item, store, holiday, and oil price features. Prior to merging, I had to engineer several features across the datasets to ensure the features added value to the model. Key engineered features include:
+#### Store Transactions Dataset:
+- Created a feature for the daily average transaction count by store to serve as a proxy for store size, an important factor in sales
+#### Holidays Dataset:
+- Created a holiday eve feature, which is the day before a holiday when sales likely spike as families prepare for holiday meals
+- Needed to break apart local, regional and national holiday dates into separate dataframes
+
+After creating these features in the supplemental datasets, I merged all of the supplemental datasets into the master transaction dataset to enrich it with new features.
+
+### Feature Engineering in Merged Dataset
+- Created day of week, month of year, and week of year features to replace the date feature
+- Identified all categorical variables to create dummies, including store_nbr, item_nbr, item_class, date features, store type, store cluster
+
+The final dataset for modeling had 249 features, mostly due to the dummies. For example, there are 83 dummy features for the MEATS category alone due to the number of different meat related items for sale.
+
+## Modeling
+### Different variations of linear regression with cross validation were used to try to find the best fit, including standard linear, lasso and ridge techniques
+
+From the 50
 
 - Question trying to answer
 - Data source
