@@ -140,7 +140,24 @@ The final dataset for modeling had 249 features, mostly due to the dummies. For 
 ## Modeling
 ### Different variations of linear regression with cross validation were used to try to find the best fit, including standard linear, lasso and ridge techniques
 
-From the 50
+From the 500K records, I took a random sample of 100K to run through each regression model. I setup a kfold cross validation with 5 folds, including a standardization of the feature matrix, to ensure an accurate reading of my error metric. For each regression modeling test, I calculated the Root Mean Squared Error. I modeled the data using standard Linear, Ridge and Lasso regression techniques.
+
+## Results
+### The standard linear regression model produced the best results on the test dataset, with an R-Squared of .54 and an average Root Mean Squared Error of 8.18. Improvements are needed to better predict sales, but the model is predictive and further refinements will yield better results.
+
+The results indicate the a linear regression model to predict unit sales is feasible, and with further refinements to the model, accuracy of the model could be improved. The Root Mean Squared Error results for each model are below.
+
+Linear RMSE test results: 8.18198212230643
+Linear R squared results: 0.5354179008623021
+Lasso RMSE test results: 8.204718952899105 with alpha of 0.05
+Ridge RMSE test results: 8.179888268205561 with alpha of 0.1
+
+I used the regularization models, Lasso and Ridge, to attempt to reduce the magnitude of the coefficients in the case of overfitting. However, I found that the larger the alphas, the worse the scores for the models. This shows that the standard linear regression model is not overfitting.
+
+Below is a plot of the residuals vs the predicted unit sales for each regression technique. There is a major
+
+![alt text](![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/hist_unitsales.png))
+
 
 - Question trying to answer
 - Data source
