@@ -154,10 +154,11 @@ Ridge RMSE test results: 8.179888268205561 with alpha of 0.1
 
 I used the regularization models, Lasso and Ridge, to attempt to reduce the magnitude of the coefficients in the case of overfitting. However, I found that the larger the alphas, the worse the scores for the models. This shows that the standard linear regression model is not overfitting.
 
-Below is a plot of the residuals vs the predicted unit sales for each regression technique. There is a major
+Below is a plot of the residuals vs the predicted unit sales for each regression technique. There is an issue with the residuals given the diagonal line, which is likely caused by a set of zero values in the actuals where the model predicts an increasing larger value. More research is required to uncover the issue. Besides for the diagonal line, the residuals are fairly normally distributed, which is a good sign.
 
-![alt text](![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/hist_unitsales.png))
+![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/residualvpredicted.png)
 
+The next plot shows the actual vs predicted values. This plot shows that there is predicted value in the model as the data points trend to the upper right.
 
 - Question trying to answer
 - Data source
