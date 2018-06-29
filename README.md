@@ -36,7 +36,7 @@ A grocery store chain in Ecuador named *Corporación Favorita* faced a similar s
 
 My module 1 capstone project is to take part in this challenge by building a linear regression model to predict unit sales for *Corporación Favorita*. 
 
-## Data Source
+## Data Source: <a name="data_source"></a>
 ### *Corporación Favorita* provided daily store level sales aggregated by product item number, along with supplemental datasets to enrich the transactional data.
 *Corporación Favorita* provided Kaggle a rich data set for the competition, which included:
 - Daily store level sales aggregated by product item number
@@ -46,7 +46,7 @@ My module 1 capstone project is to take part in this challenge by building a lin
 - Ecuador holiday dates including national, regional and local holidays (holidays affect store sales)
 - Daily oil prices (Ecuador's economy is oil dependent so oil prices may impact grocery store sales)
 
-## Exploratory Data Analysis
+## Exploratory Data Analysis: <a name="eda"></a>
 ### Given the enormous dataset (125M+ daily unit sales records), I selected a single year and product family to build a sales forecasting model.
 An outline of each table is below. My general approach was to use the supplemental datasets (items, holidays, store, etc.) to enrich the transaction dataset, and then select a subset of the data for a particula year and item family to reduce the scope of the model. 
 #### Transaction Dataset: 
@@ -139,7 +139,7 @@ Because of some extreme outliers (12 data points > 1000 unit_sales) that are sev
 ![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/hist_unitsales.png)
 
 
-## Feature Engineering
+## Feature Engineering: <a name="feature_eng"></a>
 ### 249 features were created after merging datasets to enrich the transaction data and creating dummy variables for all the categorical features.
 All of the supplemental datasets could be merged with the transaction dataset using date, item_nbr or store_nbr. This allowed me to enrich the transaction data set with item, store, holiday, and oil price features. Prior to merging, I had to engineer several features across the datasets to ensure the features added value to the model. Key engineered features include:
 #### Store Transactions Dataset:
@@ -156,7 +156,7 @@ After creating these features in the supplemental datasets, I merged all of the 
 
 The final dataset for modeling had 249 features, mostly due to the dummies. For example, there are 83 dummy features for the MEATS category alone due to the number of different meat related items for sale.
 
-## Modeling
+## Modeling: <a name="modeling"></a>
 ### Different variations of linear regression with cross validation were used to try to find the best fit, including standard linear, lasso and ridge techniques
 
 From the 500K records, I took a random sample of 100K to run through each regression model. I setup a kfold cross validation with 5 folds, including a standardization of the feature matrix, to ensure an accurate reading of my error metric. For each regression modeling test, I calculated the Root Mean Squared Error. I modeled the data using standard Linear, Ridge and Lasso regression techniques.
@@ -176,7 +176,7 @@ After running the results, I identifed the most important features using a recur
 According to my models, holidays, oil prices, and promotion status were relatively unimportant compared to the features above.
 
 
-## Results
+## Results: <a name="results"></a>
 ### The standard linear regression model produced the best results on the test dataset, with an R-Squared of .54 and an average Root Mean Squared Error of 8.18. Improvements are needed to better predict sales, but the model is predictive and further refinements will yield better results.
 
 The results indicate the a linear regression model to predict unit sales is feasible, and with further refinements to the model, accuracy of the model could be improved. The Root Mean Squared Error (RMSE) results for each model are below.
@@ -202,7 +202,7 @@ The next plot shows the actual vs predicted values. This plot shows that there i
 ![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/predictedvactuals.png)
 
 
-## Future Work
+## Future Work: <a name="future_work"></a>
 ### There is opportunity to improve the model on the MEATS item family prior to applying it to all item families and time periods.
 Additional work is need on the model to yield better results. There are a few questions I would investigate first to improve the model, including:
 - What is the issue with the diagonal trend line in the residuals? Are there some zero values I need to adjust?
@@ -212,7 +212,7 @@ Additional work is need on the model to yield better results. There are a few qu
 - Are some features collinear and need to be removed?
 
 
-## References
+## References: <a name="references"></a>
 Below is a link to the Kaggle competition with the datasets.
 [Kaggle competition link](https://www.kaggle.com/c/favorita-grocery-sales-forecasting)
 
