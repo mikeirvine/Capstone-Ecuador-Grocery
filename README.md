@@ -16,6 +16,17 @@ Galvanize Data Science Immersive - Denver
 
 ![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/logo-favorita2.png)
 
+## Table of Contents
+
+1. [Context & Key Question](#context_key_question)
+2. [Some paragraph](#paragraph1)
+    1. [Sub paragraph](#subparagraph1)
+3. [Another paragraph](#paragraph2)
+
+## This is the introduction <a name="introduction"></a>
+Some introduction text, formatted in heading 2 style
+
+<div id='context_key_question'/>
 ## Context & Key Question:
 ### *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model.
 
