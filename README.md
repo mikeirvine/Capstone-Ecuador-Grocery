@@ -19,12 +19,13 @@ Galvanize Data Science Immersive - Denver
 ## Table of Contents
 
 1. [Context & Key Question](#context_key_question)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
-
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
+2. [Data Source](#data_source)
+3. [Exporatory Data Analysis](#eda)
+4. [Feature Engineering](#feature_eng)
+5. [Modeling](#modeling)
+6. [Results](#results)
+7. [Future Work](#future_work)
+8. [References](#references)
 
 ## Context & Key Question: <a name="context_key_question"></a>
 ### *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model.
