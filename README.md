@@ -14,6 +14,8 @@ Galvanize Data Science Immersive - Denver
 - The standard linear regression model produced the best results on the test dataset, with an R-Squared of .54 and an average Root Mean Squared Error of 8.18. Improvements are needed to better predict sales, but the model is predictive and further refinements will yield better results
 - There is opportunity to improve the model on the MEATS item family prior to applying it to all item families and time periods
 
+![alt text](https://github.com/mikeirvine/Capstone-Ecuador-Grocery/blob/master/images/logo-favorita2.png)
+
 ## Context & Key Question:
 ### *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model.
 
