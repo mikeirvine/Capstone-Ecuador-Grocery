@@ -26,8 +26,7 @@ Galvanize Data Science Immersive - Denver
 ## This is the introduction <a name="introduction"></a>
 Some introduction text, formatted in heading 2 style
 
-<div id='context_key_question'/>
-## Context & Key Question:
+## Context & Key Question: <a name="context_key_question"></a>
 ### *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model.
 
 Sales forecasting is a critical planning tool for all grocers, as it enables them to to stock the appropriate inventory levels while maximizing sales. If grocers over-predict sales, they have extra inventory that might need to be sold at a discount or may spoil. If they under-predict sales, they have stockouts which lead to disappointed customers and lost revenue. A more accurate sales forecasting method will ensure the right amount of product is in the right store at the right time - leading to increased sales and reduced stockouts.
