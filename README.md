@@ -12,7 +12,7 @@ Galvanize Data Science Immersive - Denver
 - 249 features were created after merging datasets to enrich the transaction data and creating dummy variables for all the categorical features
 - Different variations of linear regression with cross validation were used to try to find the best fit, including standard linear, lasso and ridge techniques
 - The standard linear regression model produced the best results on the test dataset, with an R-Squared of .54 and an average Root Mean Squared Error of 8.18. Improvements are needed to better predict sales, but the model is predictive and further refinements will yield better results
-- There is opportunity to improve the model on the MEATS item family and prior to applying the model to all item families and time periods
+- There is opportunity to improve the model on the MEATS item family prior to applying it to all item families and time periods
 
 ## Context & Key Question:
 ### *Corporación Favorita*, a grocery chain in Ecuador, wants to reduce stockouts and improve sales with a more accurate sales forecasting model.
@@ -190,7 +190,7 @@ The next plot shows the actual vs predicted values. This plot shows that there i
 
 
 ## Future Work
-### There is opportunity to improve the model on the MEATS item family and prior to applying the model to all item families and time periods.
+### There is opportunity to improve the model on the MEATS item family prior to applying it to all item families and time periods.
 Additional work is need on the model to yield better results. There are a few questions I would investigate first to improve the model, including:
 - What is the issue with the diagonal trend line in the residuals? Are there some zero values I need to adjust?
 - Are there any other outliers or leverage points impacting the effectiveness of the model?
